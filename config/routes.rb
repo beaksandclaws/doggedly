@@ -53,4 +53,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root to: 'pages#home'
+
+  match '*path', to: 'pages#error404', via: [:get, :post]
 end

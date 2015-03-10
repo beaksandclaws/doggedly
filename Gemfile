@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'slim', '~> 3.0.3'
 gem 'slim-rails', '~> 3.0.1'
 gem 'autoprefixer-rails', '~> 5.1.7'
+gem 'placebear', '~> 0.1.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
