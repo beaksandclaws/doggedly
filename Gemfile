@@ -3,8 +3,9 @@ source 'https://rubygems.org'
 # Back-end gems
 gem 'rails', '4.2.0'
 gem 'mysql2'
-gem 'awesome_print'
-gem 'annotate'
+gem 'bcrypt', '~> 3.1.7'
+
+
 
 # Front-end gems
 gem 'sass-rails', '~> 5.0'
@@ -15,11 +16,12 @@ gem 'slim-rails', '~> 3.0.1'
 gem 'autoprefixer-rails', '~> 5.1.7'
 gem 'placebear', '~> 0.1.0'
 
-# bundle exec rake doc:rails generates the API under doc/api.
+
+
+gem 'awesome_print'
+gem 'annotate', '2.6.5'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
