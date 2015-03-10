@@ -9,15 +9,16 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Front-end gems
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
+gem 'slim', '~> 3.0.3'
+gem 'slim-rails', '~> 3.0.1'
+gem 'autoprefixer-rails', '~> 5.1.7'
 
 
 
 gem 'awesome_print'
 gem 'annotate', '2.6.5'
-# bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
@@ -36,5 +37,8 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # In case we want to connect up guard livereload
+  gem 'guard-livereload'
 end
 

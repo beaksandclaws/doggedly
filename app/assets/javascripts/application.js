@@ -12,4 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+
+
+var Doggedly = {
+  init: function() {
+    console.log("dogs!");
+  }
+}
+
+$(function() {
+  Doggedly.init();
+});
