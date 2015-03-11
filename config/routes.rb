@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'account/create'
-
   get 'account/login'
+  post 'account/login'
+  get 'account/new'
+  post 'account/create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -60,5 +61,5 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  match '*path', to: 'pages#error404', via: [:get, :post]
+  # match '*path', to: 'pages#error404', via: [:get, :post]
 end
