@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Back-end gems
 gem 'rails', '4.2.0'
 gem 'mysql2'
-gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
 
 
 
