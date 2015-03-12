@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  get 'test/new_review'
+  post 'test/create_review'
+
+  get 'test/new_place'
+  post 'test/create_place'
+
+  get 'test/new_city'
+  post 'test/create_city'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

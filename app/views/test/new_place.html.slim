@@ -1,0 +1,27 @@
+p Create Place
+= form_for @place, url: {action: 'create_place'} do |f|
+  = f.text_field :name, {placeholder: 'name'}
+  br
+  = f.collection_select :city_id, @cities, :id, :name
+  br
+  = f.text_area :location_info, {placeholder: 'location info'}
+  br
+  'Alcohol?
+  = f.check_box :alcohol
+  br
+  = f.text_area :hours, {placeholder: 'hours'}
+  br
+  = f.text_area :how_enter, {placeholder: 'how enter?'}
+  br
+  'Food?
+  = f.check_box :food
+  br
+  'Waterbowl?
+  = f.check_box :waterbowl
+  br
+  'Has Wifi?
+  = f.check_box :has_wifi
+  br
+  = f.text_area :useful_tips, {placeholder: 'useful tips?'}
+  br
+  = f.submit 'Create!'

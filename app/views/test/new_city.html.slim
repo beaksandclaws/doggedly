@@ -1,0 +1,7 @@
+p Create City
+= form_for @city, url: {action: 'create_city'} do |f|
+  = f.text_field :name, {placeholder: 'name'}
+  br
+  = f.text_field :state, {placeholder: 'state'}
+  br
+  = f.submit 'Create!'
