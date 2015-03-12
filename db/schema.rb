@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311221941) do
+ActiveRecord::Schema.define(version: 20150312020518) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -47,12 +47,12 @@ ActiveRecord::Schema.define(version: 20150311221941) do
     t.text     "useful_tips",   limit: 65535
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.boolean  "has_wifi",      limit: 1
   end
 
   add_index "places", ["city_id"], name: "index_places_on_city_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
-    t.string   "title",      limit: 255
     t.text     "content",    limit: 65535
     t.integer  "rating",     limit: 4
     t.boolean  "active",     limit: 1
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20150311221941) do
     t.integer  "failed_attempts",        limit: 4,   default: 0,  null: false
     t.string   "unlock_token",           limit: 255
     t.datetime "locked_at"
+    t.integer  "admin_level",            limit: 4
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
