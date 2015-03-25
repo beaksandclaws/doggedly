@@ -27,15 +27,22 @@
 #  admin_level            :integer
 #
 
-require 'bcrypt'
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+FactoryGirl.define do
 
-  validates :email, uniqueness: true
+  factory :admin, class: User do
+    name 'Super Admin'
+    email 'admin@doggedly.io'
+    password 'admin1234'
+    active true
+    admin_level 100
+  end
 
-  has_many :images, as: :imageable, dependent: :destroy
+  factory :user do
+    name 'Testing Testerson'
+    email 'test@doggedly.io'
+    password 'test1234'
+    active true
+    admin_level 0
+  end
 
 end

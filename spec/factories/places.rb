@@ -18,7 +18,21 @@
 #  has_wifi      :boolean
 #
 
-class Place < ActiveRecord::Base
-  belongs_to :city
-  has_many :images, as: :imageable, dependent: :destroy
+FactoryGirl.define do
+
+  factory :place do
+    id 1
+    name 'Basecamp Brewing'
+    active true
+    alcohol true
+    location_info 'Chill brewery with hiking/outdoors theme.'
+    hours '3pm - 12am'
+    how_enter 'Back entrance behind food carts.'
+    food true
+    waterbowl false
+    useful_tips 'You can order from the food carts parked outside either at the carts themselves or inside.'
+    has_wifi true
+    city
+  end
+
 end

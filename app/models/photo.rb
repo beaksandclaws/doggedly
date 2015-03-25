@@ -15,5 +15,7 @@
 #
 
 class Photo < ActiveRecord::Base
+  # mount_uploader :photo, ImageUploader
   belongs_to :user
+  belongs_to :imageable, polymorphic: true
 end

@@ -26,6 +26,5 @@ module Doggedly
     # Don't create helpers/js/css files with rails generate commands
     config.generators.assets = false
     config.generators.helper = false
-    config.generators.test_framework false
   end
 end

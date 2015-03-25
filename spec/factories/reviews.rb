@@ -12,7 +12,14 @@
 #  updated_at :datetime         not null
 #
 
-class Review < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :place
+FactoryGirl.define do
+
+  factory :review do
+    content 'I love bringing my dog here!'
+    rating 5
+    active true
+    user_id 2
+    place
+  end
+
 end
