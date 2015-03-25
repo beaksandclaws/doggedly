@@ -10,4 +10,11 @@
 #
 
 class City < ActiveRecord::Base
+  validates :name, presence: true
+  validates :state, presence: true, length: { is: 2 }
+  validates :city, uniqueness: { scope: [:name, :state] }
+
+  def state=(val)
+    write_attribute(:state, val.upcase)
+  end
 end

@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 gem 'mysql2'
 gem 'devise'
-gem 'rspec'
 
 
 
@@ -42,5 +41,7 @@ group :development, :test do
 
   # In case we want to connect up guard livereload
   gem 'guard-livereload'
+
+  gem 'rspec-rails'
 end
 

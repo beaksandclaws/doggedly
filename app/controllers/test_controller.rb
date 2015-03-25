@@ -1,4 +1,5 @@
 class TestController < ActionController::Base
+  include StatesHelper
 
   def new_review
     @review = Review.new
