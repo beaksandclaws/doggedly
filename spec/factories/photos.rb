@@ -18,6 +18,7 @@ FactoryGirl.define do
     active 1
     approved 1
     association :imageable, factory: :place
+    image Rack::Test::UploadedFile.new(File.open("#{Rails.root}/spec/fixtures/photos/place.jpg"))
     user
   end
 
@@ -25,6 +26,7 @@ FactoryGirl.define do
     active 1
     approved 1
     association :imageable, factory: :user
+    image Rack::Test::UploadedFile.new(File.open("#{Rails.root}/spec/fixtures/photos/profile.jpg"))
     user
   end
 end

@@ -35,11 +35,6 @@ RSpec.describe Photo, type: :model do
     expect(photo).not_to be_valid
   end
 
-  it 'has path' do
-    photo = build(:place_photo, path: nil)
-    expect(photo).not_to be_valid
-  end
-
   it 'belongs to place' do
     photo = create(:place_photo)
     expect(photo.imageable.class).to eq Place
@@ -48,6 +43,12 @@ RSpec.describe Photo, type: :model do
   it 'belongs to user' do
     photo = create(:profile_photo)
     expect(photo.imageable.class).to eq User
+  end
+
+  it 'has file attached' do
+    photo = create(:place_photo)
+
+    expect(photo.image_url).not_to eq nil
   end
 
 end
