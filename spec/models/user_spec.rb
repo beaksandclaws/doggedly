@@ -27,15 +27,38 @@
 #  admin_level            :integer
 #
 
-require 'bcrypt'
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+require 'rails_helper'
 
-  validates :email, uniqueness: true, length: { minimum: 3 }
+RSpec.describe User do
 
-  has_many :images, as: :imageable, dependent: :destroy
+  it 'is valid' do
+    user = build(:user)
+    expect(user).to be_valid
+  end
+
+  it 'admin is valid' do
+    admin = build(:admin)
+    expect(admin).to be_valid
+  end
+
+  it 'hashes password' do
+    user = create(:user, password: 'a new password')
+    expect(user.encrypted_password).not_to eq 'a new password'
+  end
+
+  it 'has unique email' do
+    create(:user, email: 'test1@test.com')
+    second_user = build(:user, email: 'test2@test.com')
+
+    expect(second_user).to be_valid
+
+    third_user = build(:user, email: 'test1@test.com')
+    expect(third_user).not_to be_valid
+  end
+
+  it 'has email length >= 3' do
+    user = build(:user, email: 'ee')
+    expect(user).not_to be_valid
+  end
 
 end

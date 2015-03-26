@@ -18,7 +18,7 @@ FactoryGirl.define do
     content 'I love bringing my dog here!'
     rating 5
     active true
-    user_id 2
+    user
     place
   end
 

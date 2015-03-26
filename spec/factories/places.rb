@@ -21,7 +21,6 @@
 FactoryGirl.define do
 
   factory :place do
-    id 1
     name 'Basecamp Brewing'
     active true
     alcohol true
