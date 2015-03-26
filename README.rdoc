@@ -12,6 +12,4 @@ A website by Alex Miley (yaksandpies[https://github.com/yaksandpie]) and Kellen 
 
 * Pretty much everything.
 
-* Also tests.
-
 * Go away now.
