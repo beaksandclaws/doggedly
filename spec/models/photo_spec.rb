@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id             :integer          not null, primary key
+#  active         :boolean
+#  imageable_type :string(255)
+#  imageable_id   :integer
+#  user_id        :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  image          :string(255)
+#  approved       :boolean
+#
+
 require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
@@ -22,16 +37,6 @@ RSpec.describe Photo, type: :model do
 
   it 'has path' do
     photo = build(:place_photo, path: nil)
-    expect(photo).not_to be_valid
-  end
-
-  it 'has width' do
-    photo = build(:place_photo, width: nil)
-    expect(photo).not_to be_valid
-  end
-
-  it 'has height' do
-    photo = build(:place_photo, height: nil)
     expect(photo).not_to be_valid
   end
 

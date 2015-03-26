@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get 'test/new_city'
   post 'test/create_city'
 
+  get 'test/new_photo'
+  post 'test/create_photo'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -18,6 +18,26 @@ class TestController < ActionController::Base
     end
   end
 
+  def new_photo
+    @photo = Photo.new
+    @places = Place.all
+  end
+
+  def create_photo
+    photo_params = params.require(:photo).permit(:image,:user_id)
+    @place = Place.find(params[:photo][:imageable_id])
+
+    @photo = @place.photos.create(photo_params)
+
+    if @photo.save!
+      flash[:alert] = 'Save successful :D'
+      redirect_to root_url
+    else
+      flash[:alert] = 'Save unsuccessful :/'
+      redirect_to 'new_review'
+    end
+  end
+
   def new_place
     @place = Place.new
     @cities = City.all

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312020518) do
+ActiveRecord::Schema.define(version: 20150326213151) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -21,15 +21,14 @@ ActiveRecord::Schema.define(version: 20150312020518) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string   "path",           limit: 255
     t.boolean  "active",         limit: 1
     t.string   "imageable_type", limit: 255
     t.integer  "imageable_id",   limit: 4
     t.integer  "user_id",        limit: 4
-    t.integer  "width",          limit: 4
-    t.integer  "height",         limit: 4
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "image",          limit: 255
+    t.boolean  "approved",       limit: 1
   end
 
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree

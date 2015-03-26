@@ -36,6 +36,6 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true, length: { minimum: 3 }
 
-  has_many :images, as: :imageable, dependent: :destroy
+  has_many :photos, as: :imageable, dependent: :destroy
 
 end

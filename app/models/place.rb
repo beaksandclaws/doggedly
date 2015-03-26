@@ -20,7 +20,7 @@
 
 class Place < ActiveRecord::Base
   belongs_to :city
-  has_many :images, as: :imageable, dependent: :destroy
+  has_many :photos, as: :imageable, dependent: :destroy
 
   validates :name, presence: true
   validates :city_id, presence: true

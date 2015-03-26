@@ -1,0 +1,8 @@
+p Add Photo
+= form_for @photo, url: {action: 'create_photo'}, html: { multipart: true } do |f|
+  = f.file_field :image, {placeholder: 'image file'}
+  br
+  = f.collection_select :imageable_id, @places, :id, :name
+  = f.hidden_field :user_id, {value: current_user.id}
+  br
+  = f.submit 'Create!'
