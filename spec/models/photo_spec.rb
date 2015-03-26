@@ -45,9 +45,14 @@ RSpec.describe Photo, type: :model do
     expect(photo.imageable.class).to eq User
   end
 
-  it 'has file attached' do
-    photo = create(:place_photo)
+  it 'has attached image' do
+    photo = build(:place_photo, image: nil)
+    expect(photo).not_to be_valid
 
+    photo = build(:place_photo)
+    expect(photo).to be_valid
+
+    photo = create(:place_photo)
     expect(photo.image_url).not_to eq nil
   end
 

@@ -20,5 +20,6 @@ class Photo < ActiveRecord::Base
 
   validates :imageable_type, presence: true
   validates :imageable_id, presence: true
+  validates :image, presence: true
   validates :user_id, presence: true
 end
