@@ -12,8 +12,12 @@
 FactoryGirl.define do
 
   factory :city do
-    name 'Portland'
+    name
     state 'OR'
+  end
+
+  sequence :name do |n|
+    "Portland#{n}"
   end
 
 end

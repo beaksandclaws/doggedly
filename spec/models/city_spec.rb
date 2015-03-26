@@ -36,13 +36,13 @@ RSpec.describe City do
   end
 
   it 'must be unique' do
-    create(:city)
+    create(:city, name: 'Portland')
 
     # name/state combo must be unique
-    city = build(:city)
+    city = build(:city, name: 'Portland')
     expect(city).not_to be_valid
 
-    city = build(:city, state: 'ME')
+    city = build(:city, name: 'Portland', state: 'ME')
     expect(city).to be_valid
 
     city = build(:city, name: 'Bend')

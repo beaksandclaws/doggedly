@@ -19,19 +19,19 @@ FactoryGirl.define do
     id 1
     path '/public/img/000.jpg'
     active 1
-    user_id 2
     width 100
     height 100
     association :imageable, factory: :place
+    user
   end
 
   factory :profile_photo, class: Photo do
     id 1
     path '/public/img/001.jpg'
     active 1
-    user_id 2
     width 100
     height 100
     association :imageable, factory: :user
+    user
   end
 end

@@ -18,4 +18,11 @@ class Photo < ActiveRecord::Base
   # mount_uploader :photo, ImageUploader
   belongs_to :user
   belongs_to :imageable, polymorphic: true
+
+  validates :path, presence: true
+  validates :imageable_type, presence: true
+  validates :imageable_id, presence: true
+  validates :user_id, presence: true
+  validates :width, presence: true
+  validates :height, presence: true
 end

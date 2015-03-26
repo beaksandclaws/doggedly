@@ -31,7 +31,7 @@ FactoryGirl.define do
 
   factory :admin, class: User do
     name 'Super Admin'
-    email 'admin@doggedly.io'
+    email
     password 'admin1234'
     active true
     admin_level 100
@@ -39,10 +39,14 @@ FactoryGirl.define do
 
   factory :user do
     name 'Testing Testerson'
-    email 'test@doggedly.io'
+    email
     password 'test1234'
     active true
     admin_level 0
+  end
+
+  sequence :email do |n|
+    "test#{n}@test.com"
   end
 
 end
