@@ -14,9 +14,11 @@
 
 FactoryGirl.define do
 
+  sequence(:rating) { |n| n%5+1 }
+
   factory :review do
     content 'I love bringing my dog here!'
-    rating 5
+    rating
     active true
     user
     place

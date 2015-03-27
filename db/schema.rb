@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327185228) do
+ActiveRecord::Schema.define(version: 20150327204822) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -34,19 +34,19 @@ ActiveRecord::Schema.define(version: 20150327185228) do
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "places", force: :cascade do |t|
-    t.string   "name",          limit: 255
-    t.boolean  "active",        limit: 1
-    t.integer  "city_id",       limit: 4
-    t.boolean  "alcohol",       limit: 1
-    t.text     "location_info", limit: 65535
-    t.text     "hours",         limit: 65535
-    t.text     "how_enter",     limit: 65535
-    t.boolean  "food",          limit: 1
-    t.boolean  "waterbowl",     limit: 1
-    t.text     "useful_tips",   limit: 65535
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.boolean  "has_wifi",      limit: 1
+    t.string   "name",           limit: 255
+    t.integer  "city_id",        limit: 4
+    t.boolean  "alcohol",        limit: 1
+    t.text     "location_info",  limit: 65535
+    t.text     "hours",          limit: 65535
+    t.text     "how_enter",      limit: 65535
+    t.boolean  "food",           limit: 1
+    t.boolean  "waterbowl",      limit: 1
+    t.text     "useful_tips",    limit: 65535
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "has_wifi",       limit: 1
+    t.datetime "date_activated"
   end
 
   add_index "places", ["city_id"], name: "index_places_on_city_id", using: :btree

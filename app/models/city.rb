@@ -13,6 +13,8 @@ class City < ActiveRecord::Base
   validates :name, presence: true, uniqueness: { scope: :state }
   validates :state, presence: true, length: { is: 2 }
 
+  has_many :places
+
   def state=(val)
     write_attribute(:state, val.upcase) if val.present?
   end
