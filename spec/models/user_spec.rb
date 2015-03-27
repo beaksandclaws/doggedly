@@ -25,6 +25,7 @@
 #  unlock_token           :string(255)
 #  locked_at              :datetime
 #  admin_level            :integer
+#  default_city_id        :integer
 #
 
 require 'rails_helper'
@@ -72,4 +73,18 @@ RSpec.describe User do
     expect(user).not_to be_valid
   end
 
+end
+
+
+RSpec.describe User, '#set_default_city' do
+
+  it 'sets the default city' do
+    user = create(:user)
+    city = create(:city)
+
+    user.set_default_city(city)
+
+    expect(user.city).to eq city
+
+  end
 end

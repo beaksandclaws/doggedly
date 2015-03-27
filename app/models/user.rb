@@ -25,6 +25,7 @@
 #  unlock_token           :string(255)
 #  locked_at              :datetime
 #  admin_level            :integer
+#  default_city_id        :integer
 #
 
 require 'bcrypt'
@@ -37,5 +38,10 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, length: { minimum: 3 }
 
   has_many :photos, as: :imageable, dependent: :destroy
+  belongs_to :city, foreign_key: :default_city_id
+
+  def set_default_city(city)
+    self.default_city_id = city.id
+  end
 
 end

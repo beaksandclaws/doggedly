@@ -25,6 +25,7 @@
 #  unlock_token           :string(255)
 #  locked_at              :datetime
 #  admin_level            :integer
+#  default_city_id        :integer
 #
 
 FactoryGirl.define do
