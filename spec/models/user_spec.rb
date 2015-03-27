@@ -61,4 +61,15 @@ RSpec.describe User do
     expect(user).not_to be_valid
   end
 
+  it 'has password length > 7' do
+    user = build(:user, password: nil)
+    expect(user).not_to be_valid
+
+    user = build(:user, password: '')
+    expect(user).not_to be_valid
+
+    user = build(:user, password: '1234567')
+    expect(user).not_to be_valid
+  end
+
 end
