@@ -44,7 +44,7 @@ RSpec.describe Place, '.recently_active' do
     city = create(:city, :with_places)
 
     sorted_places = city.places.sort_by { |x| [!(x.date_activated), x.name] }.shift(3)
-    places = Place.recently_activated(3)
+    places = Place.where(city_id: city.id).recently_activated(3)
 
     expect(places).to eq sorted_places
   end
@@ -55,6 +55,15 @@ RSpec.describe Place, '.recently_active' do
     places = Place.recently_activated
 
     expect(places.count).to eq 5
+  end
+
+  it 'doesn\'t return inactive places' do
+    city = create(:city, :with_places, number_of_places: 3)
+    create_list(:place, 7, city: city, date_activated: nil)
+
+    places = Place.where(city_id: city.id).recently_activated
+
+    expect(places.count).to eq 3
   end
 
 
