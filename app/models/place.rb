@@ -21,6 +21,7 @@
 class Place < ActiveRecord::Base
   belongs_to :city
   has_many :photos, as: :imageable, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :name, presence: true
   validates :city_id, presence: true
@@ -28,6 +29,10 @@ class Place < ActiveRecord::Base
   class << self
     def recently_activated(num_places = 5)
       where.not(date_activated: nil).order('date_activated DESC, name ASC').limit(num_places)
+    end
+
+    def highest_rated(num_places = 5)
+      joins(:reviews).select('*','avg(reviews.rating) as average_rating').group('places.id').where.not(date_activated: nil).order('average_rating DESC, name ASC').limit(num_places)
     end
   end
 end

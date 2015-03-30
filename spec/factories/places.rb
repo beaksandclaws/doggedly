@@ -22,8 +22,10 @@ FactoryGirl.define do
 
   sequence(:date_activated) { |n| rand(0..30).days.ago }
 
+  # sequence(:name) { |n| "Basecamp#{n}" }
+
   factory :place do
-    name 'Basecamp Brewing'
+    name
     date_activated Date.today
     alcohol true
     location_info 'Chill brewery with hiking/outdoors theme.'
@@ -34,6 +36,18 @@ FactoryGirl.define do
     useful_tips 'You can order from the food carts parked outside either at the carts themselves or inside.'
     has_wifi true
     city
+
+    trait :with_reviews do
+
+      transient do
+        number_of_reviews 10
+      end
+
+      after(:create) do |place, evaluator|
+        create_list(:review, evaluator.number_of_reviews, place: place)
+      end
+
+    end
   end
 
 end

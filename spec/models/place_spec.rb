@@ -61,11 +61,57 @@ RSpec.describe Place, '.recently_active' do
     city = create(:city, :with_places, number_of_places: 3)
     create_list(:place, 7, city: city, date_activated: nil)
 
-    places = Place.where(city_id: city.id).recently_activated
+    places = Place.where(city_id: city.id).recently_activated(5)
 
     expect(places.count).to eq 3
   end
 
+end
 
+RSpec.describe Place, '.highest_rating' do
 
+  it 'displays places with highest rating' do
+    city = create(:city, :with_places_and_reviews)
+
+    all_reviews = Review.all
+    sorted_places = Hash.new
+
+    # create an array of ratings for each place
+    all_reviews.each do |review|
+      if sorted_places[review.place.name].present?
+        sorted_places[review.place.name] << review.rating
+      else
+        sorted_places[review.place.name] = [review.rating]
+      end
+    end
+
+    # get the average rating of each place
+    sorted_places.keys.each do |place|
+      sorted_places[place] = sorted_places[place].inject{ |sum, rating| sum+rating }.to_f / sorted_places[place].size
+    end
+
+    # get the sorted place ids
+    sorted_places = sorted_places.sort_by{ |place, rating| [-(rating), place] }.map{ |x| x[0] }.shift(3)
+
+    # get sorted place id's using function
+    places = Place.where(city_id: city.id).highest_rated(3).map{ |x| x.name }
+
+    expect(places).to eq sorted_places
+  end
+
+  it 'has default of 5' do
+    city = create(:city, :with_places_and_reviews)
+
+    places = Place.highest_rated
+
+    expect(places.length).to eq 5
+  end
+
+  it 'doesn\'t return inactive places' do
+    create_list(:place, 3, :with_reviews)
+    create_list(:place, 7, :with_reviews, date_activated: nil)
+
+    places = Place.highest_rated
+    expect(places.length).to eq 3
+  end
 end

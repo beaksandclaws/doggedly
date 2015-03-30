@@ -14,7 +14,7 @@
 
 FactoryGirl.define do
 
-  sequence(:rating) { |n| n%5+1 }
+  sequence(:rating) { |n| rand(0..5) }
 
   factory :review do
     content 'I love bringing my dog here!'
