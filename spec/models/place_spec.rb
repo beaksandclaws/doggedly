@@ -71,7 +71,7 @@ end
 RSpec.describe Place, '.highest_rating' do
 
   it 'displays places with highest rating' do
-    city = create(:city, :with_places_and_reviews)
+    city = create(:city, :with_places_and_reviews, number_of_reviews: 5)
 
     all_reviews = Review.all
     sorted_places = Hash.new
@@ -100,7 +100,7 @@ RSpec.describe Place, '.highest_rating' do
   end
 
   it 'has default of 5' do
-    city = create(:city, :with_places_and_reviews)
+    city = create(:city, :with_places_and_reviews, number_of_reviews: 5)
 
     places = Place.highest_rated
 
@@ -108,8 +108,8 @@ RSpec.describe Place, '.highest_rating' do
   end
 
   it 'doesn\'t return inactive places' do
-    create_list(:place, 3, :with_reviews)
-    create_list(:place, 7, :with_reviews, date_activated: nil)
+    create_list(:place, 3, :with_reviews, number_of_reviews: 5)
+    create_list(:place, 7, :with_reviews, number_of_reviews: 5, date_activated: nil)
 
     places = Place.highest_rated
     expect(places.length).to eq 3
