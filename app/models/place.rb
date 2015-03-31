@@ -26,6 +26,10 @@ class Place < ActiveRecord::Base
   validates :name, presence: true
   validates :city_id, presence: true
 
+  def activate!
+    self.date_activated = Date.today
+  end
+
   class << self
     def recently_activated(num_places = 5)
       where.not(date_activated: nil).order('date_activated DESC, name ASC').limit(num_places)

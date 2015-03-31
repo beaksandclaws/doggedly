@@ -115,3 +115,15 @@ RSpec.describe Place, '.highest_rating' do
     expect(places.length).to eq 3
   end
 end
+
+RSpec.describe Place, '#activate!' do
+
+  it 'sets date_activated to current date' do
+    place = create(:place, date_activated: nil)
+
+    place.activate!
+
+    expect(place.date_activated).to eq Date.today
+  end
+
+end
