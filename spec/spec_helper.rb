@@ -1,9 +1,11 @@
 require 'factory_girl'
 require 'devise'
-require_relative 'support/controller_macros'
+require 'support/controller_macros'
 
 RSpec.configure do |config|
-  config.extend ControllerMacros, type: :controller
+
+  config.include ControllerMacros, type: :controller
+  config.include ControllerMacros, type: :view
 
   config.after(:each) do
     if Rails.env.test?
