@@ -22,6 +22,7 @@ gem 'placebear', '~> 0.1.0'
 
 gem 'awesome_print'
 gem 'annotate', '2.6.5'
+gem 'irbtools', require: 'irbtools/binding'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 

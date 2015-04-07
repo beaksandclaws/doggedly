@@ -16,6 +16,7 @@
 #  updated_at     :datetime         not null
 #  has_wifi       :boolean
 #  date_activated :datetime
+#  slug           :string(255)
 #
 
 class Place < ActiveRecord::Base
