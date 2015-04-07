@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get 'test/new_photo'
   post 'test/create_photo'
 
+  # Template Routes
+  get 'templates/', to: 'template#home', as: 'template_home'
+  get 'templates/detail', to: 'template#detail', as: 'template_detail'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
