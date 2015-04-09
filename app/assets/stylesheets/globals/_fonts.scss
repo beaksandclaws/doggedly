@@ -1,10 +1,23 @@
-// @font-face {
-//     font-family: 'Lato';
-//     src: url('/fonts/lato-regular-webfont.eot');
-//     src: url('/fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('/fonts/lato-regular-webfont.woff') format('woff'),
-//          url('/fonts/lato-regular-webfont.ttf') format('truetype'),
-//          url('/fonts/lato-regular-webfont.svg#lato_regular') format('svg');
-//     font-weight: normal;
-//     font-style: normal;
-// }
+@font-face {
+    font-family: 'Good Dog Cool';
+    src: url('/fonts/GOODDC__-webfont.eot');
+    src: url('/fonts/GOODDC__-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/GOODDC__-webfont.woff2') format('woff2'),
+         url('/fonts/GOODDC__-webfont.woff') format('woff'),
+         url('/fonts/GOODDC__-webfont.ttf') format('truetype'),
+         url('/fonts/GOODDC__-webfont.svg#gooddog_coolregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Good Dog';
+    src: url('/fonts/GOODDP__-webfont.eot');
+    src: url('/fonts/GOODDP__-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/GOODDP__-webfont.woff2') format('woff2'),
+         url('/fonts/GOODDP__-webfont.woff') format('woff'),
+         url('/fonts/GOODDP__-webfont.ttf') format('truetype'),
+         url('/fonts/GOODDP__-webfont.svg#gooddog_plainregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

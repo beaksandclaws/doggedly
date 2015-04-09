@@ -1,17 +1,20 @@
 // CSS Reset
 @import
-"lib/reset";
+'lib/reset';
 
 // Globals
 @import 
-"globals/breakpoints",
-"globals/variables",
-"globals/fonts",
-"globals/mixins",
-"globals/icons",
-"globals/base",
-"globals/layout";
+'globals/breakpoints',
+'globals/variables',
+'globals/fonts',
+'globals/mixins',
+'globals/icons',
+'globals/base',
+'globals/layout';
 
 // Modules
+@import
+'modules/header',
+'modules/footer';
 
 // Pages

@@ -1,0 +1,16 @@
+.main_header {
+  position: relative;
+  background: $c-white;
+}
+
+.main_logo {
+  font-size: 3em;
+  font-family: $f-logo;
+  color: $c-green;
+}
+
+.main_header-user {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
