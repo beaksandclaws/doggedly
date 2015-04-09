@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327204822) do
+ActiveRecord::Schema.define(version: 20150407205258) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "state",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "slug",       limit: 255
   end
 
   create_table "photos", force: :cascade do |t|
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150327204822) do
     t.datetime "updated_at",                   null: false
     t.boolean  "has_wifi",       limit: 1
     t.datetime "date_activated"
+    t.string   "slug",           limit: 255
   end
 
   add_index "places", ["city_id"], name: "index_places_on_city_id", using: :btree
