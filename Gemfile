@@ -46,6 +46,7 @@ group :development, :test do
   gem 'guard-livereload'
 
   gem 'rspec-rails'
+  gem 'rspec-rainbow'
   gem 'factory_girl_rails'
   gem 'capybara'
 end
