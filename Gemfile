@@ -46,7 +46,7 @@ group :development, :test do
   gem 'guard-livereload'
 
   gem 'rspec-rails'
-  gem 'rspec-rainbow'
+  gem 'rspec-rainbow', :git => 'https://github.com/beaksandclaws/rspec-rainbow.git', :branch => 'rspec-version-update'
   gem 'factory_girl_rails'
   gem 'capybara'
 end

@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/beaksandclaws/rspec-rainbow.git
+  revision: 61da719f3df6673b999f93cd19596c075fb6c7a0
+  branch: rspec-version-update
+  specs:
+    rspec-rainbow (0.2.0)
+      rspec (>= 2.99, >= 2.14.0, < 4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -241,8 +249,6 @@ GEM
       rspec-expectations (~> 3.2.0)
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
-    rspec-rainbow (0.2.0)
-      rspec (>= 2.14.0)
     rspec-support (3.2.2)
     ruby_engine (1.0.1)
     ruby_info (1.0.1)
@@ -324,7 +330,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   rmagick (~> 2.14.0)
   rspec-rails
-  rspec-rainbow
+  rspec-rainbow!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   slim (~> 3.0.3)
