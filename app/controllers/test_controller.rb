@@ -1,6 +1,9 @@
 class TestController < ActionController::Base
   include StatesHelper
 
+  def index
+  end
+
   def new_review
     @review = Review.new
     @places = Place.all

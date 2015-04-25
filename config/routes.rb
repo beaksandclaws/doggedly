@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     }
   end
 
+  get 'test', to: 'test#index'
+
   get 'test/new_review'
   post 'test/create_review'
 
