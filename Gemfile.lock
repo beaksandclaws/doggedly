@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/beaksandclaws/rspec-rainbow.git
-  revision: 5cfd0967834f6f6f59b50793b21554543348aca2
+  revision: 0eaf075a7e9fc457609c7c8b84168888737a84d8
   branch: yay
   specs:
     rspec-rainbow (0.2.0)
